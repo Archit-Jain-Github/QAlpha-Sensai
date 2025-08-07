@@ -1,0 +1,22 @@
+/* Styles for the editable scorecard title */
+.editable-title:empty:before {
+    content: attr(data-placeholder);
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    pointer-events: none;
+}
+
+.editable-title:focus {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.editable-title {
+    min-height: 28px;
+    padding: 0 2px;
+}
+
+.scorecard-title-disabled:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: rgba(255, 255, 255, 0) !important;
+}
