@@ -1,73 +1,121 @@
-# Welcome to your Lovable project
+Here's a professional and developer-friendly `README.md` for your test generator project:
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/117fcd71-6ecb-476d-a581-645d87531595
+# 🧠 Role-Based Assessment Generator
 
-## How can I edit this code?
+Automatically generate tailored assessments for any job role and skillset — in seconds.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🔍 Context
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/117fcd71-6ecb-476d-a581-645d87531595) and start prompting.
+Recruiters, educators, and course creators often waste days manually crafting assessments for new roles. This leads to:
 
-Changes made via Lovable will be committed automatically to this repo.
+* Generic, one-size-fits-all tests
+* Gaps in skill coverage
+* Inconsistent difficulty levels
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🎯 Mission
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Build an **automated test generator** that takes in:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```json
+{
+  "role": "string",
+  "skills": ["string", ...],
+  "difficulty": "Easy" | "Medium" | "Hard"
+}
 ```
 
-**Edit a file directly in GitHub**
+And outputs a fully-formed role-specific assessment, including:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+* ✅ 15 multiple-choice questions (MCQs)
+* 🧠 5 short-answer questions (SAQs)
+* 📄 1 situational mini-case
+* 🧩 *(Optional)* 6–8 aptitude questions (e.g., logical reasoning, chart-based analysis)
 
-**Use GitHub Codespaces**
+Each output includes a **skill coverage matrix** and respects the selected difficulty level.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 💡 Example
 
-This project is built with:
+**Input:**
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```json
+{
+  "role": "Product Analyst",
+  "skills": ["SQL", "Product-Metrics"],
+  "difficulty": "Medium"
+}
+```
 
-## How can I deploy this project?
+**Output:**
 
-Simply open [Lovable](https://lovable.dev/projects/117fcd71-6ecb-476d-a581-645d87531595) and click on Share -> Publish.
+* MCQs: Joins, window functions, north-star metrics
+* SAQs: Write a SQL query, interpret retention curve
+* Case: “Diagnose GMV drop after feature launch”
+* Aptitude: Chart-based data sufficiency
+* Skill Coverage Table: Mapping each item to skill and Bloom’s level
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🧰 Starter Kit (Provided)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+The project comes with:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. 📊 `role_skill_map.csv` — 100+ predefined Role ↔ Skill mappings
+2. 📈 Difficulty taxonomy — Based on Bloom’s levels and distractor quality
+3. 🧾 JSON Schemas — For `mcq`, `saq`, `case`, and `aptitude` items
+4. 🧪 Prompt templates — Optimized with 3 validated reference assessments
+
+---
+
+## 📦 Folder Structure (Suggested)
+
+```
+.
+├── data/
+│   └── role_skill_map.csv
+├── schemas/
+│   ├── mcq.json
+│   ├── saq.json
+│   ├── case.json
+│   └── aptitude.json
+├── prompts/
+│   └── prompt_templates.md
+├── examples/
+│   └── reference_assessments.json
+├── generator/
+│   ├── index.js | .py
+│   └── difficulty_taxonomy.md
+└── README.md
+```
+
+---
+
+## 🧪 Features to Implement
+
+* [ ] Role ↔ Skill matching from CSV
+* [ ] Difficulty scaler (Easy/Med/Hard logic)
+* [ ] Question generator using schema-compliant templates
+* [ ] Skill coverage matrix generator
+* [ ] Aptitude block based on role type (optional toggle)
+
+---
+
+## 🚀 Usage (CLI / API)
+
+Coming soon. Will support both CLI input and HTTP API.
+
+---
+
+## 📌 License
+
+MIT License
+
+---
+
