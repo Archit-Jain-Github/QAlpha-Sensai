@@ -13,8 +13,8 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>Role & Skill-Aligned Assessment Generator</title>
-        <meta name="description" content="Generate role-relevant MCQs, SAQs, caselets, and aptitude questions from role, skills, and difficulty. Export assessment.json and coverage." />
+        <title>Assessment Generator</title>
+        <meta name="description" content="Generate role-relevant MCQs, SAQs, caselets, and aptitude questions." />
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content="Role & Skill-Aligned Assessment Generator" />
         <meta property="og:description" content="Create assessments aligned to roles and skills in seconds. Includes coverage and reviewer editing." />
@@ -34,10 +34,10 @@ const Index = () => {
       <header className="bg-hero py-16">
         <div className="container mx-auto text-center space-y-4">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-primary-foreground">
-            Role & Skill‑Aligned Assessment Generator
+            Assessment Generator
           </h1>
           <p className="text-primary-foreground/90 text-lg max-w-2xl mx-auto">
-            From role + skills + difficulty → MCQs, SAQs, mini-caselets and optional aptitude. Export assessment.json and a coverage report.
+            From role + skills + difficulty → MCQs, SAQs, mini-caselets and optional aptitude.
           </p>
         </div>
       </header>
@@ -46,7 +46,7 @@ const Index = () => {
         <AssessmentForm onGenerated={(a) => setAssessment(a)} />
         {assessment && (
           <>
-            <AssessmentReview assessment={assessment} setAssessment={setAssessment} />
+
             <AssessmentQuiz assessment={assessment} />
           </>
         )}
