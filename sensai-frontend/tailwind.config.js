@@ -53,11 +53,25 @@ module.exports = {
           DEFAULT: "var(--card)",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Assessment-specific colors
+        'assessment-bg': 'hsl(222 47% 4%)',
+        'assessment-question': 'hsl(224 27% 10%)',
+        'answer-bg': 'hsl(240 21% 13%)',
+        'answer-hover': 'hsl(240 21% 18%)',
+        'progress-bg': 'hsl(240 19% 16%)',
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(135deg, hsl(var(--primary)), hsl(263 85% 75%))',
+        'gradient-card': 'linear-gradient(135deg, hsl(var(--card)), hsl(240 27% 12%))',
+      },
+      boxShadow: {
+        'glow': '0 0 20px hsl(var(--primary) / 0.3)',
+        'card': '0 4px 20px hsl(222 47% 2% / 0.5)',
       },
       keyframes: {
         "accordion-down": {
@@ -81,11 +95,11 @@ module.exports = {
           "100%": { opacity: 0, transform: "translateY(-20px)" }
         },
         "gradient-x": {
-          "0%, 100%": { 
+          "0%, 100%": {
             backgroundPosition: "0% 50%",
             backgroundSize: "200% 200%"
           },
-          "50%": { 
+          "50%": {
             backgroundPosition: "100% 50%",
             backgroundSize: "200% 200%"
           }
@@ -111,4 +125,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar")],
-} 
+}
